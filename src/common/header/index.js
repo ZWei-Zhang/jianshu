@@ -6,20 +6,26 @@ import { actionCreators } from './store'
 
 class Header extends Component {
   getListArea() {
-    const { focused, list } = this.props
-    if (focused) {
+    const { focused, list, page, totalPage, handelMouseEnter, handelMouseLeave, mouseIn, handleChangPage } = this.props
+    const newList = list.toJS()
+    const pageList = []
+
+    if (newList.length) {
+      for (let i = (page - 1) * 5; i < page * 5; i++) {
+        pageList.push(
+          <SearchInfoItem key={newList[i]}>{newList[i]}</SearchInfoItem>
+        )
+      }
+    }
+    if (focused || mouseIn) {
       return (
-        <SearchInfo>
+        <SearchInfo onMouseEnter={handelMouseEnter} onMouseLeave={handelMouseLeave}>
           <SearchInfoTitle>
             热门搜索
-            <SearchInfoSwitch>换一批</SearchInfoSwitch>
+            <SearchInfoSwitch onClick={() => { handleChangPage(page, totalPage) }}>换一批</SearchInfoSwitch>
           </SearchInfoTitle>
           <SearchInfoList>
-            {
-              list.map((item) => {
-                return <SearchInfoItem key={item}>{item}</SearchInfoItem>
-              })
-            }
+            {pageList}
           </SearchInfoList>
         </SearchInfo>
       )
@@ -66,7 +72,10 @@ class Header extends Component {
 const mapStateToProps = (state) => {
   return {
     focused: state.get('header').get('focused'),
-    list: state.getIn(['header', 'list'])
+    list: state.getIn(['header', 'list']),
+    page: state.getIn(['header', 'page']),
+    totalPage: state.getIn(['header', 'totalPage']),
+    mouseIn: state.get('header').get('mouseIn')
   }
 }
 
@@ -78,6 +87,20 @@ const mapDispathToProps = (dispath) => {
     },
     handleInputBlur() {
       dispath(actionCreators.searchBlur())
+    },
+    handelMouseEnter() {
+      dispath(actionCreators.mouseEnter())
+    },
+    handelMouseLeave() {
+      dispath(actionCreators.mouseLeave())
+    },
+    handleChangPage(page, totalPage) {
+      console.log(page, totalPage);
+      if (page < totalPage) {
+        dispath(actionCreators.changePage(page + 1))
+      } else {
+        dispath(actionCreators.changePage(1))
+      }
     }
   }
 }
