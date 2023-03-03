@@ -22,7 +22,12 @@ class Header extends Component {
         <SearchInfo onMouseEnter={handelMouseEnter} onMouseLeave={handelMouseLeave}>
           <SearchInfoTitle>
             热门搜索
-            <SearchInfoSwitch onClick={() => { handleChangPage(page, totalPage) }}>换一批</SearchInfoSwitch>
+            <SearchInfoSwitch
+              onClick={() => { handleChangPage(page, totalPage, this.spinIcon) }}
+            >
+              <i ref={icon => this.spinIcon = icon} className='iconfont icon-spin spin'></i>
+              换一批
+            </SearchInfoSwitch>
           </SearchInfoTitle>
           <SearchInfoList>
             {pageList}
@@ -53,7 +58,7 @@ class Header extends Component {
             >
               <NavSearch onFocus={handleInputFocus} onBlur={handleInputBlur} className={focused ? 'focused' : ''}></NavSearch>
             </CSSTransition>
-            <i className={focused ? 'focused iconfont icon-fangdajing' : 'iconfont icon-fangdajing'} ></i>
+            <i className={focused ? 'focused iconfont icon-fangdajing zoom' : 'iconfont icon-fangdajing zoom'} ></i>
             {this.getListArea()}
           </SearchWrapper>
         </Nav>
@@ -94,8 +99,14 @@ const mapDispathToProps = (dispath) => {
     handelMouseLeave() {
       dispath(actionCreators.mouseLeave())
     },
-    handleChangPage(page, totalPage) {
-      console.log(page, totalPage);
+    handleChangPage(page, totalPage, spin) {
+      let originAngle = spin.style.transform.replace(/[^0-9]/ig, '')
+      if (originAngle) {
+        originAngle = parseInt(originAngle, 10)
+      } else {
+        originAngle = 0
+      }
+      spin.style.transform = `rotate(${originAngle + 360}deg)`
       if (page < totalPage) {
         dispath(actionCreators.changePage(page + 1))
       } else {

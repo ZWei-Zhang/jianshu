@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "6403458",
+      "name": "spin",
+      "font_class": "spin",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
       "icon_id": "9053065",
       "name": "quill-pen-fill",
       "font_class": "quill-pen-fill",
