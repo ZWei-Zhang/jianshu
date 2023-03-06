@@ -1,4 +1,9 @@
 import { fromJS } from "immutable";
+import dailyPic from '../../../statics/banner-s-daily.png'
+import clubPic from '../../../statics/banner-s-club.png'
+import goodPic from '../../../statics/banner-s-7.png'
+import safePic from '../../../statics/banner-s.png'
+
 
 const defaultState = fromJS({
   topicList: [{
@@ -27,6 +32,19 @@ const defaultState = fromJS({
     title: '说说我们家这次投资的事',
     desc: '我想说说老公这次投资的事。 去年六月投资了一个加油站，我当时觉得不靠谱，但是他执意要投，最后我们协商就两股9万块钱。 他那个同学投了20股将近5...',
     imgUrl: 'http://img01.yohoboys.com/contentimg/2018/11/22/13/0187be5a52edcdc999f749b9e24c7815fb.jpg'
+  }],
+  recommendList: [{
+    id: 1,
+    imgUrl: dailyPic
+  }, {
+    id: 2,
+    imgUrl: clubPic
+  }, {
+    id: 3,
+    imgUrl: goodPic
+  }, {
+    id: 4,
+    imgUrl: safePic
   }]
 })
 
