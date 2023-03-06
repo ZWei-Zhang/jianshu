@@ -80,13 +80,53 @@ export const ListInfo = styled.div`
 `
 
 export const RecommendWrapper = styled.div`
-  margin:30px 0;
+  margin:27px 0 17px 0;
   width:280px;
 `
 
 export const RecommendItem = styled.div`
   width: 280px;
   height: 50px;
+  margin-bottom: 6px;
   background: url(${(props) => props.imgUrl});
   background-size: contain;
+`
+
+export const AppWrapper = styled.div`
+  margin-bottom: 30px;
+  padding: 10px 22px;
+  width: 100%;
+  border: 1px solid #f0f0f0;
+  border-radius: 6px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  .qrcode {
+    width: 60px;
+    height: 60px;
+    opacity: .85;
+  }
+  .info {
+    margin-left: 7px;
+    .title {
+      font-size: 15px;
+      color: #333;
+    }
+    .description {
+      margin-top: 4px;
+      font-size: 13px;
+      color: #999;
+    }
+  }
+`
+
+export const WriteWrapper = styled.div`
+  width: 278px;
+  border: 1px solid #dcdcdc;
+  border-radius: 3px;
+  height: 300px;
+  line-height: 300px;
+  text-align: center;
+  backgound:red;
 `
