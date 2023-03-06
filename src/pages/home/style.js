@@ -123,10 +123,84 @@ export const AppWrapper = styled.div`
 
 export const WriteWrapper = styled.div`
   width: 278px;
-  border: 1px solid #dcdcdc;
-  border-radius: 3px;
   height: 300px;
-  line-height: 300px;
-  text-align: center;
   backgound:red;
+  position:relative;
+  .title{
+    text-align: left;
+    span {
+      font-size: 14px;
+      color: #969696;
+    }
+    .page-change {
+      float: right;
+      display: inline-block;
+      font-size: 14px;
+      color: #969696;
+      i {
+        display: inline-block;
+        line-height: 1;
+        transition: .5s ease;
+        margin-right: 3px;
+      }
+    }
+  }
+  .list {
+    margin: 0 0 20px;
+    text-align: left;
+  }
+  .find-more {
+    position: absolute;
+    padding: 7px 7px 7px 12px;
+    left: 0;
+    width: 100%;
+    font-size: 13px;
+    color: #787878;
+    background-color: #f7f7f7;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    text-align:center;
+    box-sizing: border-box;
+    .iconfont{
+      font-size: 13px;
+    }
+  }
+`
+
+export const WriteItem = styled.div`
+  .list-item {
+    margin-top: 15px;
+    line-height: 20px;
+    .avatar {
+      float: left;
+      width: 48px;
+      height: 48px;
+      margin-right: 10px;
+      cursor: pointer;
+      img {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+      }
+    }
+    .follow{
+      float: right;
+      margin-top: 5px;
+      padding: 0;
+      font-size: 13px;
+      color: #42c02e;
+    }
+    .name {
+      padding-top: 5px;
+      margin-right: 60px;
+      font-size: 14px;
+      display: block;
+    }
+    p {
+      margin-top: 2px;
+      font-size: 12px;
+      color: #969696;
+    }
+  }
 `

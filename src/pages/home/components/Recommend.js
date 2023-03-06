@@ -16,10 +16,10 @@ class Recommend extends Component {
           }
         </RecommendWrapper>
         <AppWrapper>
-          <img class="qrcode" src={qrcode} alt="Download index side qrcode" />
-          <div class="info">
-            <div class="title">下载简书手机App<i class="iconfont ic-link"></i></div>
-            <div class="description">随时随地发现和创作内容</div>
+          <img className="qrcode" src={qrcode} alt="Download index side qrcode" />
+          <div className="info">
+            <div className="title">下载简书手机App<i className="iconfont icon-right1"></i></div>
+            <div className="description">随时随地发现和创作内容</div>
           </div>
         </AppWrapper>
       </div>

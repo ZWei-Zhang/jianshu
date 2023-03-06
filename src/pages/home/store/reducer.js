@@ -45,6 +45,28 @@ const defaultState = fromJS({
   }, {
     id: 4,
     imgUrl: safePic
+  }],
+  writeItem: [{
+    id: 1,
+    imgUrl: 'https://upload.jianshu.io/users/upload_avatars/301940/189d69dd-af7c-4290-9e2c-89e98acf3603.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp',
+    name: '卢璐说'
+  },
+  {
+    id: 2,
+    imgUrl: 'https://upload.jianshu.io/users/upload_avatars/4790772/388e473c-fe2f-40e0-9301-e357ae8f1b41.jpeg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp',
+    name: '茶点故事'
+  }, {
+    id: 3,
+    imgUrl: 'https://upload.jianshu.io/users/upload_avatars/3343569/6940ee65-036f-4b7a-9935-5915d9b67d14.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp',
+    name: '吴晓布'
+  }, {
+    id: 4,
+    imgUrl: 'https://upload.jianshu.io/users/upload_avatars/6652326/21cbdf91-a930-45d2-ad61-4f91df1e9709.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp',
+    name: '野狐狸_'
+  }, {
+    id: 5,
+    imgUrl: 'https://upload.jianshu.io/users/upload_avatars/3950651/acfaa0ce-42fe-424a-b7c8-9a0136fb96ec.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp',
+    name: '三儿王屿'
   }]
 })
 
