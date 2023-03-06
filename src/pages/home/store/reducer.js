@@ -22,7 +22,8 @@ const defaultState = fromJS({
     id: 4,
     imgUrl: safePic
   }],
-  writeItem: []
+  writeItem: [],
+  articlePage: 1
 })
 
 export default (state = defaultState, action) => {
@@ -32,6 +33,11 @@ export default (state = defaultState, action) => {
         topicList: fromJS(action.topicList),
         articleList: fromJS(action.articleList),
         writeItem: fromJS(action.writeItem)
+      })
+    case actionTypes.ADD_HOME_LIST:
+      return state.merge({
+        articleList: state.get('articleList').concat(action.list),
+        articlePage: action.nextPage
       })
     default:
       return state
