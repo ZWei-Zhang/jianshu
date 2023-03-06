@@ -9,8 +9,25 @@ const defaultState = fromJS({
     id: 2,
     title: '手绘',
     imgUrl: 'https://n.sinaimg.cn/sinacn10115/439/w641h598/20200214/4a9b-ipmxpvz8164848.jpg'
-  }
-  ]
+  }],
+  articleList: [{
+    id: 1,
+    title: '迟子建的文笔真的绝了，真后悔现在才读到',
+    desc: '书名：“迟子建散文典藏” 出版社：浙江文艺出版社 作者：迟子建 类型：文学、经典 ～～～～～～～～～～ 关于迟子建，你不能不知道的事。 三次获得...',
+    imgUrl: 'https://i03piccdn.sogoucdn.com/0e01a06ac418c8c3'
+  },
+  {
+    id: 2,
+    title: '我果断地退出了家族群',
+    desc: '我们这个家族群已经成立三四年了，群主是我们家族的堂哥，因为堂哥是我们家族里混的最好的，其他堂兄堂弟什么的都在农村种地，也没什么文化。 咱也不知道...',
+    imgUrl: 'https://img.syt5.com/2021/0519/20210519083837846.jpg.420.420.jpg'
+  },
+  {
+    id: 3,
+    title: '说说我们家这次投资的事',
+    desc: '我想说说老公这次投资的事。 去年六月投资了一个加油站，我当时觉得不靠谱，但是他执意要投，最后我们协商就两股9万块钱。 他那个同学投了20股将近5...',
+    imgUrl: 'http://img01.yohoboys.com/contentimg/2018/11/22/13/0187be5a52edcdc999f749b9e24c7815fb.jpg'
+  }]
 })
 
 export default (state = defaultState, action) => {
